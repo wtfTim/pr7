@@ -1,0 +1,10 @@
+.animate {
+    transition: all 1s ease-in-out;
+  }
+
+  #ball{
+    position: absolute;
+      left: 600px;
+      top: 50px;
+      transition: 2s ease-out all;
+}
