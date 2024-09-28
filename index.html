@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Задание1 -->
+    <button onclick="this.style.display='none'">Скрыть</button>
+
+    <div id="text">Меня нужно скрыть</div>
+    <button onclick="toggleVisibility('text')">Скрыть/показать</button>
+    
+    <!-- Задание2 -->
+    <script>
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+                if (element.style.display === 'none') {
+            element.style.display = 'block';
+            } else {
+            element.style.display = 'none';
+            }
+        }
+    </script>
+
+    <!-- Задание3 -->
+    <body style="height:2000px">
+        Нажмите в любое место для перемещения мяча.
+        <img src="https://ru.js.cx/clipart/ball.svg" id="ball">
+    </body>
+      
+      <script>
+        var ball = document.getElementById('ball');
+        
+        document.addEventListener('click', function(e) {
+            var x = e.clientX;
+            var y = e.clientY;
+        
+            ball.style.left = x + 'px';
+            ball.style.top = y - ball.offsetHeight / 2 + 'px';
+        
+            ball.classList.add('animate');
+            setTimeout(function() { ball.classList.remove('animate'); }, 1000);
+        });
+      </script>
+      
+</body>
+
+</html>
